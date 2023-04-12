@@ -1,0 +1,25 @@
+name: hypocampal-vol-quant
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - pandas
+  - pydicom
+  - matplotlib
+  - seaborn
+  - black-jupyter
+  - isort
+  - autoflake
+  - black
+  - pylint
+  - flake8
+  - scikit-learn
+  - scipy
+  - pillow
+  - nibabel
+  - tensorboard
+  - jupyterlab
+  - torchvision
+  - pytorch-lightning
+prefix: /home/uziel/miniconda3/envs/hypocampal-vol-quant
