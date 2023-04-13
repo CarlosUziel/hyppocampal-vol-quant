@@ -1,4 +1,4 @@
-name: hypocampal-vol-quant
+name: hyppocampal-vol-quant
 channels:
   - bioconda
   - conda-forge
@@ -22,4 +22,7 @@ dependencies:
   - jupyterlab
   - torchvision
   - pytorch-lightning
-prefix: /home/uziel/miniconda3/envs/hypocampal-vol-quant
+  - medpy
+  - typer
+  - ipywidgets
+prefix: /home/uziel/miniconda3/envs/hyppocampal-vol-quant
