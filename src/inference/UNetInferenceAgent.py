@@ -1,9 +1,15 @@
 """
 Contains class that runs inferencing
 """
+from pathlib import Path
+from typing import Any, Optional
+
+import numpy as np
 import torch
+import torch.nn.functional as F
 
 from networks.RecursiveUNet import UNet
+from utils.utils import med_reshape
 
 
 class UNetInferenceAgent:
@@ -11,7 +17,13 @@ class UNetInferenceAgent:
     Stores model and parameters and some methods to handle inferencing
     """
 
-    def __init__(self, parameter_file_path="", model=None, device="cpu", patch_size=64):
+    def __init__(
+        self,
+        parameter_file_path: Path = None,
+        model: Optional[Any] = None,
+        device: str = "cpu",
+        patch_size: int = 64,
+    ):
         self.model = model
         self.patch_size = patch_size
         self.device = device
@@ -26,38 +38,40 @@ class UNetInferenceAgent:
 
         self.model.to(device)
 
-    def single_volume_inference_unpadded(self, volume):
+    def single_volume_inference_unpadded(self, volume: np.array) -> np.array:
         """
         Runs inference on a single volume of arbitrary patch size,
-        padding it to the conformant size first
+            padding it to the conformant size first.
 
-        Arguments:
-            volume {Numpy array} -- 3D array representing the volume
+        Args:
+            volume: 3D array representing the volume
 
         Returns:
-            3D NumPy array with prediction mask
+            3D NumPy array with prediction masks
         """
+        return self.single_volume_inference(
+            med_reshape(
+                volume, new_shape=(volume.shape[0], self.patch_size, self.patch_size)
+            )
+        )
 
-        raise NotImplementedError
-
-    def single_volume_inference(self, volume):
+    def single_volume_inference(self, volume: np.array) -> np.array:
         """
         Runs inference on a single volume of conformant patch size
 
-        Arguments:
-            volume {Numpy array} -- 3D array representing the volume
+        Args:
+            volume: 3D array representing the volume
 
         Returns:
-            3D NumPy array with prediction mask
+            3D NumPy array with prediction masks
         """
         self.model.eval()
 
-        # Assuming volume is a numpy array of shape [X,Y,Z] and we need to slice X axis
-
-        # TASK: Write code that will create mask for each slice across the X (0th) dimension. After
-        # that, put all slices into a 3D Numpy array. You can verify if your method is
-        # correct by running it on one of the volumes in your training set and comparing
-        # with the label in 3D Slicer.
-        # <YOUR CODE HERE>
-
-        return  #
+        return np.vstack(
+            [
+                torch.argmax(
+                    F.softmax(self.model(vol_slice[None, ...]), dim=1), dim=1
+                )
+                for vol_slice in volume
+            ]
+        )
