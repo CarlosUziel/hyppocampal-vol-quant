@@ -3,19 +3,23 @@ Contains various functions for computing statistics over 3D volumes
 """
 
 
-def Dice3d(a, b):
+import numpy as np
+
+
+def dice_3d(a: np.array, b: np.array) -> float:
     """
     This will compute the Dice Similarity coefficient for two 3-dimensional volumes
     Volumes are expected to be of the same size. We are expecting binary masks -
-    0's are treated as background and anything else is counted as data
+    0's are treated as background and anything else is counted as data.
 
-    Arguments:
-        a {Numpy array} -- 3D array with first volume
-        b {Numpy array} -- 3D array with second volume
+    Args:
+        a: 3D array with first volume.
+        b: 3D array with second volume.
 
     Returns:
-        float
+        Dice Similarity coefficient
     """
+    # 1. Sanity checks
     if len(a.shape) != 3 or len(b.shape) != 3:
         raise Exception(f"Expecting 3 dimensional inputs, got {a.shape} and {b.shape}")
 
@@ -24,24 +28,33 @@ def Dice3d(a, b):
             f"Expecting inputs of the same shape, got {a.shape} and {b.shape}"
         )
 
-    # TASK: Write implementation of Dice3D. If you completed exercises in the lessons
-    # you should already have it.
-    # <YOUR CODE HERE>
+    # 2. Arrays must be binary
+    a, b = (a.astype(bool), b.astype(bool))
+
+    # 3. Compute metric
+    intersection = np.sum(a * b)
+    union = np.sum(a) + np.sum(b)
+
+    if union == 0:
+        return -1
+
+    return 2.0 * float(intersection) / float(union)
 
 
-def Jaccard3d(a, b):
+def jaccard_3d(a: np.array, b: np.array) -> float:
     """
     This will compute the Jaccard Similarity coefficient for two 3-dimensional volumes
     Volumes are expected to be of the same size. We are expecting binary masks -
-    0's are treated as background and anything else is counted as data
+    0's are treated as background and anything else is counted as data.
 
-    Arguments:
-        a {Numpy array} -- 3D array with first volume
-        b {Numpy array} -- 3D array with second volume
+    Args:
+        a: 3D array with first volume.
+        b: 3D array with second volume.
 
     Returns:
-        float
+        3D Jaccard coefficient.
     """
+    # 1. Sanity checks
     if len(a.shape) != 3 or len(b.shape) != 3:
         raise Exception(f"Expecting 3 dimensional inputs, got {a.shape} and {b.shape}")
 
@@ -50,8 +63,70 @@ def Jaccard3d(a, b):
             f"Expecting inputs of the same shape, got {a.shape} and {b.shape}"
         )
 
-    # TASK: Write implementation of Jaccard similarity coefficient. Please do not use
-    # the Dice3D function from above to do the computation ;)
-    # <YOUR CODE GOES HERE>
+    # 2. Arrays must be binary
+    a, b = (a.astype(bool), b.astype(bool))
 
-    return  #
+    # 3. Compute metric
+    intersection = np.sum(a * b)
+    union = np.sum(a) + np.sum(b)
+
+    if union == 0:
+        return -1
+
+    return float(intersection) / float((union - intersection))
+
+
+def sensitivity(gt: np.array, pred: np.array) -> float:
+    """
+    This will compute the sensitivity for two 3-dimensional volumes representing ground
+        truch and prediction. Volumes are expected to be of the same size. We are
+        expecting binary masks - 0's are treated as background and anything else is
+        counted as data.
+
+    Sensitivity is TP / (TP + FN)
+
+    Args:
+        a: 3D array with first volume.
+        b: 3D array with second volume.
+
+    Returns:
+        Dice Similarity coefficient
+    """
+    # Arrays must be binary
+    gt, pred = (gt.astype(bool), pred.astype(bool))
+
+    tp = np.sum(gt[gt == pred])
+    fn = np.sum(gt[gt != pred])
+
+    if fn + tp == 0:
+        return -1
+
+    return tp / (fn + tp)
+
+
+def specificity(gt: np.array, pred: np.array) -> float:
+    """
+    This will compute the specificity for two 3-dimensional volumes representing ground
+        truch and prediction. Volumes are expected to be of the same size. We are
+        expecting binary masks - 0's are treated as background and anything else is
+        counted as data.
+
+    Specificity is TN / (TN + FP)
+
+    Args:
+        a: 3D array with first volume.
+        b: 3D array with second volume.
+
+    Returns:
+        Dice Similarity coefficient
+    """
+    # Arrays must be binary
+    gt, pred = (gt.astype(bool), pred.astype(bool))
+
+    tn = np.sum(~gt[gt == pred])
+    fp = np.sum(~gt[gt != pred])
+
+    if tn + fp == 0:
+        return -1
+
+    return tn / (tn + fp)
