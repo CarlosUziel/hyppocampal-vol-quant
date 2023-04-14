@@ -1,6 +1,9 @@
 """
 Various utility methods in this module
 """
+from pathlib import Path
+from typing import Tuple
+
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
@@ -84,34 +87,32 @@ def log_to_tensorboard(
     )
 
 
-def save_numpy_as_image(arr, path):
+def save_numpy_as_image(arr: np.array, path: Path) -> None:
     """
     This saves image (2D array) as a file using matplotlib
 
     Arguments:
-        arr {array} -- 2D array of pixels
-        path {string} -- path to file
+        arr: 2D array of pixels
+        path: path to file
     """
     plt.imshow(arr, cmap="gray")  # Needs to be in row,col order
     plt.savefig(path)
 
 
-def med_reshape(image, new_shape):
+def med_reshape(image: np.array, new_shape: Tuple[int, int, int]) -> np.array:
     """
     This function reshapes 3D data to new dimension padding with zeros
     and leaving the content in the top-left corner
 
-    Arguments:
-        image {array} -- 3D array of pixel data
-        new_shape {3-tuple} -- expected output shape
+    Args:
+        image: 3D array of pixel data.
+        new_shape: Expected output shape.
 
     Returns:
         3D array of desired shape, padded with zeroes
     """
-
     reshaped_image = np.zeros(new_shape)
-
-    # TASK: write your original image into the reshaped image
-    # <CODE GOES HERE>
+    x_dim, y_dim, z_dim = image.shape
+    reshaped_image[0:x_dim, 0:y_dim, 0:z_dim] = image
 
     return reshaped_image
