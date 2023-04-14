@@ -4,72 +4,38 @@ This file contains code that will kick off training and testing processes
 import json
 import os
 
-from data_prep.HippocampusDatasetLoader import LoadHippocampusData
+from sklearn.model_selection import train_test_split
+
+from data_prep.utils import load_hyppocampus_data
 from experiments.UNetExperiment import UNetExperiment
-
-
-class Config:
-    """
-    Holds configuration parameters
-    """
-
-    def __init__(self):
-        self.name = "Basic_unet"
-        self.root_dir = r"YOUR DIRECTORY HERE"
-        self.n_epochs = 10
-        self.learning_rate = 0.0002
-        self.batch_size = 8
-        self.patch_size = 64
-        self.test_results_dir = "RESULTS GO HERE"
-
+from utils.config import Config
 
 if __name__ == "__main__":
-    # Get configuration
+    # 1. Get configuration
+    config = Config()
 
-    # TASK: Fill in parameters of the Config class and specify directory where the data is stored and
-    # directory where results will go
-    c = Config()
-
-    # Load data
+    # 2. Load data
     print("Loading data...")
+    data = load_hyppocampus_data(
+        config.root_dir, y_shape=config.patch_size, z_shape=config.patch_size
+    )
 
-    # TASK: LoadHippocampusData is not complete. Go to the implementation and complete it.
-    data = LoadHippocampusData(c.root_dir, y_shape=c.patch_size, z_shape=c.patch_size)
+    # 3. Train/test/val split
+    ids = range(len(data))
+    train_ids, test_ids = train_test_split(ids, test_size=0.2)
+    train_ids, val_ids = train_test_split(train_ids, test_size=0.2)
+    split_indices = {"train": train_ids, "val": val_ids, "test": test_ids}
 
-    # Create test-train-val split
-    # In a real world scenario you would probably do multiple splits for
-    # multi-fold training to improve your model quality
+    # 4. Set up and run experiment
+    exp = UNetExperiment(config, split_indices, data)
 
-    keys = range(len(data))
-
-    # Here, random permutation of keys array would be useful in case if we do something like
-    # a k-fold training and combining the results.
-
-    split = dict()
-
-    # TASK: create three keys in the dictionary: "train", "val" and "test". In each key, store
-    # the array with indices of training volumes to be used for training, validation
-    # and testing respectively.
-    # <YOUR CODE GOES HERE>
-
-    # Set up and run experiment
-
-    # TASK: Class UNetExperiment has missing pieces. Go to the file and fill them in
-    exp = UNetExperiment(c, split, data)
-
-    # You could free up memory by deleting the dataset
-    # as it has been copied into loaders
-    # del dataset
-
-    # run training
+    # 4.1. Run training
     exp.run()
 
-    # prep and run testing
-
-    # TASK: Test method is not complete. Go to the method and complete it
+    # 4.2. Prepare and run testing
     results_json = exp.run_test()
 
-    results_json["config"] = vars(c)
+    results_json["config"] = vars(config)
 
     with open(os.path.join(exp.out_dir, "results.json"), "w") as out_file:
         json.dump(results_json, out_file, indent=2, separators=(",", ": "))
