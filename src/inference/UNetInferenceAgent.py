@@ -69,9 +69,7 @@ class UNetInferenceAgent:
 
         return np.vstack(
             [
-                torch.argmax(
-                    F.softmax(self.model(vol_slice[None, ...]), dim=1), dim=1
-                )
+                torch.argmax(F.softmax(self.model(vol_slice[None, ...]), dim=1), dim=1)
                 for vol_slice in volume
             ]
         )
