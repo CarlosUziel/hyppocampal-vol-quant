@@ -67,9 +67,19 @@ class UNetInferenceAgent:
         """
         self.model.eval()
 
-        return np.vstack(
+        return torch.vstack(
             [
-                torch.argmax(F.softmax(self.model(vol_slice[None, ...]), dim=1), dim=1)
+                torch.argmax(
+                    F.softmax(
+                        self.model(
+                            torch.tensor(vol_slice[None, None, :])
+                            .float()
+                            .to(device=self.device)
+                        ),
+                        dim=1,
+                    ),
+                    dim=1,
+                )
                 for vol_slice in volume
             ]
         )

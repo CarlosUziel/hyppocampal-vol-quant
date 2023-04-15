@@ -3,6 +3,7 @@ This file contains code that will kick off training and testing processes
 """
 import json
 import os
+from pathlib import Path
 
 from sklearn.model_selection import train_test_split
 
@@ -35,7 +36,9 @@ if __name__ == "__main__":
     # 4.2. Prepare and run testing
     results_json = exp.run_test()
 
-    results_json["config"] = vars(config)
+    results_json["config"] = {
+        k: str(v) if isinstance(v, Path) else v for k, v in vars(config).items()
+    }
 
     with open(os.path.join(exp.out_dir, "results.json"), "w") as out_file:
         json.dump(results_json, out_file, indent=2, separators=(",", ": "))
