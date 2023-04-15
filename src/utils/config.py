@@ -16,7 +16,7 @@ class Config:
             .joinpath("output")
             .joinpath("cleaned_data")
         )
-        self.n_epochs = 10
+        self.n_epochs = 50
         self.learning_rate = 0.0002
         self.batch_size = 32
         self.patch_size = 64
