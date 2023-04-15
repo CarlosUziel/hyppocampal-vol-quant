@@ -236,7 +236,9 @@ class UNetExperiment:
 
         # 1. Compute metrics for every volume in the test set
         for i, x in enumerate(self.test_data):
-            pred_label = inference_agent.single_volume_inference(x["image"])
+            pred_label = (
+                inference_agent.single_volume_inference(x["image"]).cpu().numpy()
+            )
 
             # 1.1. Compute and report performance metrics
             out_dict["volume_stats"].append(
@@ -250,7 +252,7 @@ class UNetExperiment:
             )
             print(
                 f"[{100*(i+1)/len(self.test_data):.2f}% complete] "
-                f"{x['filename']} Dice {out_dict['volume_stats']['dice']:.4f}."
+                f"{x['filename']} Dice {out_dict['volume_stats'][-1]['dice']:.4f}."
             )
 
         # 2. Compute metrics' averages over all test instances
