@@ -92,10 +92,10 @@ class UNetExperiment:
         tensorboard_path = config.test_results_dir.parent.joinpath("runs")
         tensorboard_path.mkdir(exist_ok=True, parents=True)
         self.tensorboard_train_writer = SummaryWriter(
-            log_dir=tensorboard_path, comment="_train"
+            log_dir=tensorboard_path.joinpath("train")
         )
         self.tensorboard_val_writer = SummaryWriter(
-            log_dir=tensorboard_path, comment="_val"
+            log_dir=tensorboard_path.joinpath("val")
         )
 
     def train(self):
