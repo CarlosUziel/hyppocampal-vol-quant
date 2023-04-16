@@ -1,0 +1,383 @@
+{
+  "volume_stats": [
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/345.nii.gz",
+      "dice": 0.8667115449343655,
+      "jaccard": 0.7647757647757648,
+      "tpr": 0.8640939597315436,
+      "tnr": 0.8640939597315436
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/229.nii.gz",
+      "dice": 0.9061098221191028,
+      "jaccard": 0.8283371040723982,
+      "tpr": 0.9219389361032421,
+      "tnr": 0.9219389361032421
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/156.nii.gz",
+      "dice": 0.8976844372644049,
+      "jaccard": 0.8143624816805081,
+      "tpr": 0.9261111111111111,
+      "tnr": 0.9261111111111111
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/295.nii.gz",
+      "dice": 0.8854555141182738,
+      "jaccard": 0.7944550669216062,
+      "tpr": 0.9162072767364939,
+      "tnr": 0.9162072767364939
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/297.nii.gz",
+      "dice": 0.8481542098563375,
+      "jaccard": 0.73634354278497,
+      "tpr": 0.8370423546302943,
+      "tnr": 0.8370423546302943
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/176.nii.gz",
+      "dice": 0.8966084952255515,
+      "jaccard": 0.8125932557445539,
+      "tpr": 0.9325342465753425,
+      "tnr": 0.9325342465753425
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/106.nii.gz",
+      "dice": 0.8836381291471112,
+      "jaccard": 0.7915337779066396,
+      "tpr": 0.8829236739974127,
+      "tnr": 0.8829236739974127
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/259.nii.gz",
+      "dice": 0.879812520924004,
+      "jaccard": 0.785415421398685,
+      "tpr": 0.9,
+      "tnr": 0.9
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/108.nii.gz",
+      "dice": 0.9229761592873985,
+      "jaccard": 0.8569691072731696,
+      "tpr": 0.8941624365482234,
+      "tnr": 0.8941624365482234
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/372.nii.gz",
+      "dice": 0.8976377952755905,
+      "jaccard": 0.8142857142857143,
+      "tpr": 0.9164513350559862,
+      "tnr": 0.9164513350559862
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/263.nii.gz",
+      "dice": 0.9111675126903553,
+      "jaccard": 0.8368298368298368,
+      "tpr": 0.9142614601018676,
+      "tnr": 0.9142614601018676
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/358.nii.gz",
+      "dice": 0.8737295434969854,
+      "jaccard": 0.7757724074640563,
+      "tpr": 0.8784205057152754,
+      "tnr": 0.8784205057152754
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/286.nii.gz",
+      "dice": 0.9209800918836141,
+      "jaccard": 0.8535339199545842,
+      "tpr": 0.9479823455233292,
+      "tnr": 0.9479823455233292
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/057.nii.gz",
+      "dice": 0.9008517887563884,
+      "jaccard": 0.819590824550527,
+      "tpr": 0.9534799855751893,
+      "tnr": 0.9534799855751893
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/219.nii.gz",
+      "dice": 0.8816599261473537,
+      "jaccard": 0.7883647798742138,
+      "tpr": 0.8858657243816255,
+      "tnr": 0.8858657243816255
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/298.nii.gz",
+      "dice": 0.8260185347088652,
+      "jaccard": 0.7036044086982425,
+      "tpr": 0.8267413370668534,
+      "tnr": 0.8267413370668534
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/093.nii.gz",
+      "dice": 0.8984243106359032,
+      "jaccard": 0.815581098339719,
+      "tpr": 0.8532870122928915,
+      "tnr": 0.8532870122928915
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/050.nii.gz",
+      "dice": 0.8850637029005151,
+      "jaccard": 0.7938244590323364,
+      "tpr": 0.852257896110676,
+      "tnr": 0.852257896110676
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/149.nii.gz",
+      "dice": 0.9157452110263199,
+      "jaccard": 0.8445848893995979,
+      "tpr": 0.9354120267260579,
+      "tnr": 0.9354120267260579
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/333.nii.gz",
+      "dice": 0.851258581235698,
+      "jaccard": 0.7410358565737052,
+      "tpr": 0.8470588235294118,
+      "tnr": 0.8470588235294118
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/141.nii.gz",
+      "dice": 0.8946322067594433,
+      "jaccard": 0.8093525179856115,
+      "tpr": 0.9119380987472365,
+      "tnr": 0.9119380987472365
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/049.nii.gz",
+      "dice": 0.9138025095471904,
+      "jaccard": 0.8412857860371673,
+      "tpr": 0.8986051502145923,
+      "tnr": 0.8986051502145923
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/084.nii.gz",
+      "dice": 0.9052526595744681,
+      "jaccard": 0.8269055572426359,
+      "tpr": 0.8644444444444445,
+      "tnr": 0.8644444444444445
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/015.nii.gz",
+      "dice": 0.8583290088220031,
+      "jaccard": 0.7518181818181818,
+      "tpr": 0.8800993260021284,
+      "tnr": 0.8800993260021284
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/356.nii.gz",
+      "dice": 0.8871482448505947,
+      "jaccard": 0.7971845672575599,
+      "tpr": 0.8747139588100686,
+      "tnr": 0.8747139588100686
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/352.nii.gz",
+      "dice": 0.9107675617032818,
+      "jaccard": 0.8361553784860558,
+      "tpr": 0.9127480293558032,
+      "tnr": 0.9127480293558032
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/089.nii.gz",
+      "dice": 0.8623980085741945,
+      "jaccard": 0.7580841235108193,
+      "tpr": 0.8459034183396635,
+      "tnr": 0.8459034183396635
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/325.nii.gz",
+      "dice": 0.839563862928349,
+      "jaccard": 0.723489932885906,
+      "tpr": 0.8435054773082942,
+      "tnr": 0.8435054773082942
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/314.nii.gz",
+      "dice": 0.8514456630109671,
+      "jaccard": 0.7413194444444444,
+      "tpr": 0.8705402650356778,
+      "tnr": 0.8705402650356778
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/195.nii.gz",
+      "dice": 0.8990672420994014,
+      "jaccard": 0.8166413758219524,
+      "tpr": 0.8819994537011745,
+      "tnr": 0.8819994537011745
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/245.nii.gz",
+      "dice": 0.8214173228346456,
+      "jaccard": 0.6969535008017104,
+      "tpr": 0.7843609022556391,
+      "tnr": 0.7843609022556391
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/189.nii.gz",
+      "dice": 0.905169951442445,
+      "jaccard": 0.8267675450039134,
+      "tpr": 0.9172214182344428,
+      "tnr": 0.9172214182344428
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/207.nii.gz",
+      "dice": 0.9019754938734683,
+      "jaccard": 0.8214529719881576,
+      "tpr": 0.8853706431026018,
+      "tnr": 0.8853706431026018
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/070.nii.gz",
+      "dice": 0.8417731029301277,
+      "jaccard": 0.7267773741567203,
+      "tpr": 0.8118840579710145,
+      "tnr": 0.8118840579710145
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/337.nii.gz",
+      "dice": 0.8791408258962335,
+      "jaccard": 0.7843454790823212,
+      "tpr": 0.8933292345527206,
+      "tnr": 0.8933292345527206
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/343.nii.gz",
+      "dice": 0.8724909195182565,
+      "jaccard": 0.7738216344523567,
+      "tpr": 0.8716577540106952,
+      "tnr": 0.8716577540106952
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/316.nii.gz",
+      "dice": 0.8759562021898905,
+      "jaccard": 0.7792900987456632,
+      "tpr": 0.9434571890145396,
+      "tnr": 0.9434571890145396
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/143.nii.gz",
+      "dice": 0.8663418767210337,
+      "jaccard": 0.7642002989536621,
+      "tpr": 0.8531497705465165,
+      "tnr": 0.8531497705465165
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/007.nii.gz",
+      "dice": 0.9258274231678487,
+      "jaccard": 0.861898211829436,
+      "tpr": 0.9291221826809015,
+      "tnr": 0.9291221826809015
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/157.nii.gz",
+      "dice": 0.9143449911084766,
+      "jaccard": 0.8422058422058422,
+      "tpr": 0.920346062052506,
+      "tnr": 0.920346062052506
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/305.nii.gz",
+      "dice": 0.8250503693754198,
+      "jaccard": 0.7022006287510717,
+      "tpr": 0.8111587982832618,
+      "tnr": 0.8111587982832618
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/274.nii.gz",
+      "dice": 0.87651598676957,
+      "jaccard": 0.7801766437684003,
+      "tpr": 0.8949343339587242,
+      "tnr": 0.8949343339587242
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/265.nii.gz",
+      "dice": 0.9020163831127914,
+      "jaccard": 0.8215208034433286,
+      "tpr": 0.9208748793824381,
+      "tnr": 0.9208748793824381
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/056.nii.gz",
+      "dice": 0.906832298136646,
+      "jaccard": 0.8295454545454546,
+      "tpr": 0.8604339673185106,
+      "tnr": 0.8604339673185106
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/317.nii.gz",
+      "dice": 0.8507683215130024,
+      "jaccard": 0.740293134481872,
+      "tpr": 0.8764079147640792,
+      "tnr": 0.8764079147640792
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/243.nii.gz",
+      "dice": 0.8464759246336357,
+      "jaccard": 0.7338173018753781,
+      "tpr": 0.8207036535859269,
+      "tnr": 0.8207036535859269
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/282.nii.gz",
+      "dice": 0.8491598280578351,
+      "jaccard": 0.7378607809847199,
+      "tpr": 0.8994205298013245,
+      "tnr": 0.8994205298013245
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/268.nii.gz",
+      "dice": 0.8769675554127851,
+      "jaccard": 0.7808924485125858,
+      "tpr": 0.8939096267190569,
+      "tnr": 0.8939096267190569
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/048.nii.gz",
+      "dice": 0.8993769470404984,
+      "jaccard": 0.8171525615624116,
+      "tpr": 0.8823349633251834,
+      "tnr": 0.8823349633251834
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/331.nii.gz",
+      "dice": 0.8810627123880136,
+      "jaccard": 0.7874102705687466,
+      "tpr": 0.8929242329367564,
+      "tnr": 0.8929242329367564
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/034.nii.gz",
+      "dice": 0.901338313103019,
+      "jaccard": 0.8203966005665723,
+      "tpr": 0.8580740740740741,
+      "tnr": 0.8580740740740741
+    },
+    {
+      "filename": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data/images/094.nii.gz",
+      "dice": 0.908642616143265,
+      "jaccard": 0.8325802615933413,
+      "tpr": 0.8689501116902457,
+      "tnr": 0.8689501116902457
+    }
+  ],
+  "overall": {
+    "mean_dice": 0.8827065416321721,
+    "mean_jaccard": 0.7910690467485544,
+    "mean_tpr": 0.8838606994179438,
+    "mean_tnr": 0.8838606994179438
+  },
+  "config": {
+    "name": "basic_unet",
+    "root_dir": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_1/cleaned_data",
+    "n_epochs": 50,
+    "learning_rate": 0.0001,
+    "batch_size": 64,
+    "patch_size": 64,
+    "test_results_dir": "/home/uziel/Development/hyppocampal-vol-quant/data/output/section_2/test_results"
+  }
+}
