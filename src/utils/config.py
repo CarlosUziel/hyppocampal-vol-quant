@@ -14,11 +14,12 @@ class Config:
             .parents[2]
             .joinpath("data")
             .joinpath("output")
+            .joinpath("section_1")
             .joinpath("cleaned_data")
         )
         self.n_epochs = 50
-        self.learning_rate = 0.0002
-        self.batch_size = 32
+        self.learning_rate = 0.0001
+        self.batch_size = 64
         self.patch_size = 64
         self.test_results_dir = (
             Path(__file__)
@@ -26,5 +27,6 @@ class Config:
             .parents[2]
             .joinpath("data")
             .joinpath("output")
+            .joinpath("section_2")
             .joinpath("test_results")
         )
