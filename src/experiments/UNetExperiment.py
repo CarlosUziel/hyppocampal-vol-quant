@@ -2,8 +2,10 @@
 This module represents a UNet experiment and contains a class that handles
 the experiment lifecycle
 """
-import os
+import bz2
 import time
+from pathlib import Path
+from typing import Optional
 
 import numpy as np
 import torch
@@ -87,7 +89,7 @@ class UNetExperiment:
         self.scheduler = optim.lr_scheduler.ReduceLROnPlateau(self.optimizer, "min")
 
         # Set up Tensorboard. By default it saves data into runs folder.
-        tensorboard_path = config.test_results_dir.joinpath("runs")
+        tensorboard_path = config.test_results_dir.parent.joinpath("runs")
         tensorboard_path.mkdir(exist_ok=True, parents=True)
         self.tensorboard_train_writer = SummaryWriter(
             log_dir=tensorboard_path, comment="_train"
@@ -196,22 +198,22 @@ class UNetExperiment:
         """
         Saves model parameters to a file in results directory
         """
-        path = os.path.join(self.out_dir, "model.pth")
+        with bz2.open(self.out_dir.joinpath("model.pth.bz2"), "wb") as fp:
+            torch.save(self.model.state_dict(), fp)
 
-        torch.save(self.model.state_dict(), path)
-
-    def load_model_parameters(self, path=""):
+    def load_model_parameters(self, path: Optional[Path] = None):
         """
         Loads model parameters from a supplied path or a
         results directory
         """
         if not path:
-            model_path = os.path.join(self.out_dir, "model.pth")
+            model_path = self.out_dir.joinpath("model.pth.bz2")
         else:
             model_path = path
 
-        if os.path.exists(model_path):
-            self.model.load_state_dict(torch.load(model_path))
+        if model_path.exists():
+            with bz2.open(model_path, "rb") as fp:
+                self.model.load_state_dict(torch.load(fp))
         else:
             raise Exception(f"Could not find path {model_path}")
 
