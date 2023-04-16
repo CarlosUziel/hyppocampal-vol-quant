@@ -1,6 +1,7 @@
 """
 Contains class that runs inferencing
 """
+import bz2
 from pathlib import Path
 from typing import Any, Optional
 
@@ -32,9 +33,8 @@ class UNetInferenceAgent:
             self.model = UNet(num_classes=3)
 
         if parameter_file_path:
-            self.model.load_state_dict(
-                torch.load(parameter_file_path, map_location=self.device)
-            )
+            with bz2.open(parameter_file_path, "rb") as fp:
+                self.model.load_state_dict(torch.load(fp, map_location=self.device))
 
         self.model.to(device)
 
