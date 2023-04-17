@@ -1,10 +1,10 @@
-# Validation plan of HyppoCrop.AI
+# Validation plan of HyppoVolume.AI
 
 This document details the plan to be followed in order to assess the production, real-world performance of the hyppocampal volume estimation algorithm.
 
 ## Intended Use
 
-HyppoCrop.AI is meant to be used as an assistant to the radiologist by providing a fast and accurate estimation of hyppocampal volumes on a given brain MRI cropped image.
+HyppoVolume.AI is meant to be used as an assistant to the radiologist by providing a fast and accurate estimation of hyppocampal volumes on a given brain MRI cropped image.
 
 ## Ground Truth Definition
 
