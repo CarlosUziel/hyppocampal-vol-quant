@@ -2,6 +2,10 @@
 
 This document details the plan to be followed in order to assess the production, real-world performance of the hyppocampal volume estimation algorithm.
 
+## Intended Use
+
+HyppoCrop.AI is meant to be used as an assistant to the radiologist by providing a fast and accurate estimation of hyppocampal volumes on a given brain MRI cropped image.
+
 ## Ground Truth Definition
 
 In order to asses the performance of the algorithm, we need a robust ground truth that is reliable and represents the reality as much as possible. Given the known issue of inter-rater agreement, that is, the expected disagreement on segmentation labels by different radiologists, we propose the use of multiple domain-expert labelers to define the groud truth of each volume. The final ground truth would be determined by a majority voting system on each voxel or any suitable alternative, depending on the production conditions.
