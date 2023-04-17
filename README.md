@@ -4,6 +4,7 @@
 <br />
 <div align="center">
   <h3 align="center">Quantifying Alzheimer's Disease Progression Through Automated Measurement of Hippocampal Volume</h3>
+  <img src="../hyppocampal-vol-quant/data/output/section_3/report_ohif_viewer.png" alt="Aibnb locations" width="700" height="350">
 
 </div>
 
