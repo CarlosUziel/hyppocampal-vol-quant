@@ -25,4 +25,9 @@ dependencies:
   - medpy
   - typer
   - ipywidgets
+  - tensorflow
+  - ca-certificates
+  - certifi
+  - openssl
+  - dcmtk
 prefix: /home/uziel/miniconda3/envs/hyppocampal-vol-quant
